@@ -8,3 +8,4 @@ curl -sfL -o a/h/oma-tap.webp    $B/07808a89-83f5-469a-a425-56beb99f74ff.webp
 curl -sfL -o a/h/oma-kiss.webp   $B/0b886d78-a38b-4f32-bab9-626fde682ed0.webp
 curl -sfL -o a/h/oma-tap-m.webp  $B/7e7c5f71-f79f-48ac-b25e-81392ed52d5f.webp
 curl -sfL -o a/h/oma-kiss-m.webp $B/b3311df5-4a8f-43b5-8562-2641e5e72eed.webp
+curl -sfL -o a/og.jpg $B/9f39f628-ae5e-44f1-8883-7f1c392368c5.jpg
