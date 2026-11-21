@@ -126,6 +126,8 @@ nav.top{position:absolute;left:0;right:0;top:0;z-index:30;display:flex;align-ite
 .marq{display:flex;width:max-content;animation:marq 60s linear infinite}
 .marq span{font-family:var(--serif);font-size:32px;padding:0 20px;color:#5F6E8E;white-space:nowrap;display:flex;align-items:center;gap:40px}
 .marq span:nth-child(even){font-style:italic;color:#93A1BD}
+.marq .bl{font-style:inherit;display:inline-flex;align-items:center;gap:12px}
+.marq .bl img{width:34px;height:34px;border-radius:10px;object-fit:cover;box-shadow:0 0 0 1px rgba(30,60,140,.12),0 8px 16px -8px rgba(30,60,140,.45)}
 .marq span:after{content:"✦";font-family:var(--sans);font-size:12px;color:var(--pink2)}
 @keyframes marq{to{transform:translateX(-50%)}}
 
@@ -297,7 +299,7 @@ section{padding:110px 0 20px;position:relative}
 .s3.pop span{animation:spop .6s cubic-bezier(.2,1.6,.4,1) forwards}
 .s3.pop .s2{animation-delay:.08s}.s3.pop .s3b{animation-delay:.16s}
 @keyframes spop{to{opacity:1;transform:scale(1) rotate(var(--r))}}
-.pdots{display:flex;justify-content:center;gap:8px}
+.pdots{display:flex;margin-top:44px;justify-content:center;gap:8px}
 .pdots button{width:8px;height:8px;border-radius:50%;background:#C3D0E8;transition:all .25s}
 .pdots button.on{width:26px;border-radius:99px;background:var(--blue)}
 .pcta{display:flex;flex-direction:column;align-items:center;gap:18px;margin-top:34px}
@@ -495,6 +497,14 @@ footer .by a{text-decoration:underline;text-underline-offset:3px}
 .cfig .float{position:relative;inset:auto}
 .cfig img{display:block;width:100%;max-width:520px;margin-left:auto;filter:drop-shadow(0 30px 40px rgba(30,60,140,.3))}
 .closer footer{padding-top:26px}
+/* closer legibility: soft blue scrim behind the copy + stronger shadows */
+.sky2:before{content:"";position:absolute;inset:0;z-index:1;pointer-events:none;background:radial-gradient(70% 85% at 22% 58%,rgba(22,62,150,.42),rgba(22,62,150,.18) 55%,transparent 80%)}
+.sky2 .eyebrow{opacity:1;font-weight:600;text-shadow:0 1px 10px rgba(14,40,110,.55)}
+.sky2 h2{text-shadow:0 2px 3px rgba(14,40,110,.35),0 4px 26px rgba(14,40,110,.5)}
+.sky2 h2 i{color:#FFD9EA}
+.ctxt .lead{color:#fff;font-weight:500;font-size:19px;text-shadow:0 1px 3px rgba(14,40,110,.45),0 2px 16px rgba(14,40,110,.45)}
+.handles span{background:rgba(255,255,255,.9);color:#1E4FD8;border-color:#fff;box-shadow:0 8px 20px -10px rgba(14,40,110,.5)}
+@media (max-width:900px){.sky2:before{background:radial-gradient(90% 60% at 50% 32%,rgba(22,62,150,.4),rgba(22,62,150,.14) 60%,transparent 85%)}}
 @media (max-width:900px){.sky2{padding:56px 20px 0;text-align:center}.cgrid{grid-template-columns:1fr}.ctxt{padding-bottom:10px}.ctxt .eyebrow{text-align:center}.ctxt .ctext{margin:8px auto 0}.ctxt h2{margin:4px auto 0}.ctxt .acts,.handles{justify-content:center}.cfig img{margin:0 auto;max-width:360px}}
 </style>
 </head>
@@ -784,7 +794,8 @@ footer .by a{text-decoration:underline;text-underline-offset:3px}
 const $=(s,r=document)=>r.querySelector(s),$$=(s,r=document)=>[...r.querySelectorAll(s)];
 const X=id=>'https://x.com/Omaofweb3/status/'+id;
 const BR=['Loadout','Loyal','Blonex','OKX Africa','SplashOS','Bitget','BloFin Wallet','Javex','Magic Markets','Perle Labs','Tangent','Grumpus Labs','MANIFEST','Markets.xyz','IOG','Xora Finance','Prophet','hyper_stack','Probly','Mozi Finance','Kumbaya','BasedOne','Ares','Fair.club','twin3','Unicity Labs','DuelDuck','SnoopBulls'];
-$('#marq').innerHTML=[...BR,...BR].map(b=>`<span>${b}</span>`).join('');
+const bslug=b=>b.toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'');
+$('#marq').innerHTML=[...BR,...BR].map(b=>`<span><i class="bl"><img src="a/b/${bslug(b)}.webp" alt="" loading="lazy">${b}</i></span>`).join('');
 
 /* ---------- views (from X, Nov 2026) ---------- */
 const VW={};'1292620:2210 9855689:1845 0107549:2048 1072468:3666 4175152:1922 4168175:1748 3834935:1509 6400923:1312 1262789:1338 3260893:3478 3104340:9206 5323883:1710 2461801:1404 1644080:1234 3277653:1187 1765947:1870 4677029:2752 1544124:1673 2100083:1340 4157734:2378 2885204:2753 1851501:3029 1356762:1837 2705038:1526 2549403:2288 4135610:3598 1547826:2818 3021545:7286 5204574:3870 8057646:11311 8414918:1654 0095716:1602 8667297:2072 7276283:1755 8734129:2424 5756333:1689 4653864:1996 9556176:2400 7504871:5211 7536038:4365 0443958:3816 8984304:5590 7640029:20123 3407137:3871 1159075:11754 1949659:7107 9946834:4971 6516602:5507 4243995:4523 1985359:3647 8201464:15872 1508696:6537 2815935:6619 4715624:5257 6322880:4437 9259940:5023 6759504:3810 5604949:101353 0490780:9118 1518677:2960 6071433:91274 9897484:3176 9972185:129464 7021662:167202 0811152:79162 9106938:95961 9578431:5933 0457611:6616 3843022:3437 2193128:6576 0650267:4208 8888883:16236 7022360:2848 4572413:5584 2928086:2494'.split(' ').forEach(x=>{const [k,v]=x.split(':');VW[k]=+v});
