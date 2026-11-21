@@ -816,19 +816,41 @@ const vOf=id=>VW[String(id).slice(-7)];
 /* ---------- posts grouped by brand: best post is the cover ---------- */
 // post: [file, header, intro, date, paid, id]
 const C=[
- {b:'Loyal',s:'privacy',sub:'15-post privacy campaign',f:1,p:[
+ {b:'Loyal',s:'privacy',sub:'16-post privacy campaign',f:1,p:[
    ['loyal-shield','Shield it. Send it. Love it.','My weekly recap for Loyal: private assets went live on mainnet. Here is what that means for your wallet.','16 Mar',0,'2033440199531765947'],
    ['loyal-article','Privacy first: how Loyal keeps your crypto safe','An X article on sending money without exposing your wallet address.','18 Mar',1,'2034164508734677029'],
-   ['loyal-early','Where the Loyal run started','My first Loyal post: a privacy-first AI and payments tool on Solana. Fifteen posts followed.','9 Feb',0,'2020752851631292620']]},
+   ['loyal-early','Where the Loyal run started','My first Loyal post: a privacy-first AI and payments tool on Solana. Fifteen posts followed.','9 Feb',0,'2020752851631292620'],
+   ['p9855689','A message sent to the wrong chat','A friend\'s private message hit the wrong group. Loyal\'s private sends exist for exactly that kind of mistake.','11 Feb',0,'2021479491109855689'],
+   ['p0107549','Banking without the queue','Loyal\'s new update fixed a small, annoying thing we all do with money. Here\'s the bank analogy that explains it.','17 Feb',0,'2023659187860107549'],
+   ['p1072468','Sending SOL with just a username','I used the Loyal Telegram agent to send SOL to someone by username. The whole thing is in the video.','18 Feb',0,'2024016543391072468'],
+   ['p4175152','Credit where it\'s due','Clean UX, clear focus and a consistent privacy theme. Why Loyal keeps shipping solid products.','20 Feb',0,'2024754073254175152'],
+   ['p4168175','Why we forget, and how Loyal helps','The Ebbinghaus forgetting curve, and how Loyal keeps your money info organised so you don\'t lose track.','26 Feb',0,'2026915810724168175'],
+   ['p3834935','Last week\'s stream, recapped','Private transactions on mainnet and everything else the Loyal team covered on stream.','2 Mar',0,'2028358008883834935'],
+   ['p6400923','Private keys, now exportable','Loyal added private key export and import, so you\'re never locked into one app.','3 Mar',0,'2028728998046400923'],
+   ['p1262789','Privacy, shipping in real time','A quick look at what went live on Loyal this week.','5 Mar',0,'2029445663281262789'],
+   ['p5323883','The cleanest agent UI around','A new week and a closer look at how good the Loyal agent looks and feels.','9 Mar',0,'2030902518805323883'],
+   ['p2461801','Privacy updates this week','What to expect from Loyal this week: mainnet release, mobile app work and private key exports.','10 Mar',0,'2031264912962461801'],
+   ['p1544124','The work behind the surface','People only see updates drop. Here\'s the behind-the-scenes work Loyal put in to get there.','19 Mar',0,'2034566748041544124'],
+   ['p3277653','Send funds without exposing your wallet','Sending money used to mean dropping your address. Loyal changes that.','13 Mar',1,'2032348541243277653'],
+   ['p2100083','Private transactions are live','Loyal tested private transactions with real users, and now they\'re on mainnet.','24 Mar',1,'2036334895862100083']]},
  {b:'BloFin Wallet',s:'presale',sub:'Airdrop & prediction campaign',p:[
    ['manifest','An airdrop that doesn\'t need big capital','BloFin Wallet partnered with MANIFEST on a 500K pool. Swap, hold, invite, and my code doubles your share.','20 Jul',1,'2079173360714715624'],
    ['blofin-soccer','Global Soccer Fest is on','Free spins, a 100% profit boost and a 30,000 USDC prize pool. Here is how to stay positioned.','26 Jun',0,'2070416444840443958'],
-   ['blofin-neymar','Neymar better score 😭','A World Cup prediction placed straight from the BloFin Wallet app.','24 Jun',0,'2069677299507536038']]},
- {b:'Tangent',s:'trading',sub:'Cross-chain DEX walkthrough',p:[['tangent','Getting started with Tangent Cash','A step-by-step walkthrough of Tangent\'s cross-chain DEX: create a wallet, fund it, make your first trade.','10 Aug',0,'2086697317470490780']]},
+   ['blofin-neymar','Neymar better score 😭','A World Cup prediction placed straight from the BloFin Wallet app.','24 Jun',0,'2069677299507536038'],
+   ['p1159075','Received, straight into BloFin','A reward landed in my BloFin Wallet. Smooth, as usual.','29 Jun',0,'2071618674931159075'],
+   ['p9946834','BloFin Wallet now supports WBTC','Put your BTC to work across Ethereum, Solana and TRON without selling it.','8 Jul',0,'2074764426389946834'],
+   ['p4243995','A UI I open just to look at','Sometimes I open BloFin Wallet just to admire how smooth it is.','13 Jul',0,'2076573394414243995']]},
+ {b:'Tangent',s:'trading',sub:'Cross-chain DEX walkthrough',p:[['tangent','Getting started with Tangent Cash','A step-by-step walkthrough of Tangent\'s cross-chain DEX: create a wallet, fund it, make your first trade.','10 Aug',0,'2086697317470490780'],
+   ['p6071433','How Tangent handles bridges','No single party holds the keys to bridged funds. Here\'s why that matters.','13 Aug',1,'2087795985846071433'],
+   ['p0811152','Bitcoin, with smart contracts','Tangent connects chains like Bitcoin to smart contracts, so BTC can do more.','16 Aug',1,'2088873198720811152']]},
  {b:'Magic Markets',s:'prediction',sub:'Sports prediction campaign',p:[
    ['magic-traders','Asian handicap, made simple','Instead of only picking a winner, you trade the margin. Magic Markets made sports trading click for me.','10 Sep',0,'2097951581144572413'],
-   ['magic-inplay','In-play liquidity from 25+ venues','Why live liquidity matters when a game turns, and how Magic Markets pools it into one book.','28 Aug',0,'2093281344042193128']]},
- {b:'Grumpus Labs',s:'ai',sub:'Paid partnership',p:[['grumpus','Freelancing without the 20% cut','Most freelance platforms hold your money and take a fifth of it. GrumBuild locks payment in a multisig instead.','6 Apr',1,'2041167626794135610']]},
+   ['magic-inplay','In-play liquidity from 25+ venues','Why live liquidity matters when a game turns, and how Magic Markets pools it into one book.','28 Aug',0,'2093281344042193128'],
+   ['p9578431','25+ venues, one book','Magic Markets pulls the best odds from over 25 venues into a single order book.','18 Aug',1,'2089735658239578431'],
+   ['p0650267','Build your own position','On Magic Markets you\'re not stuck with preset bets. You build the position you want.','31 Aug',0,'2094309480720650267']]},
+ {b:'Grumpus Labs',s:'ai',sub:'Freelance platform campaign',p:[['grumpus','Freelancing without the 20% cut','Most freelance platforms hold your money and take a fifth of it. GrumBuild locks payment in a multisig instead.','6 Apr',1,'2041167626794135610'],
+   ['p2549403','P2P freelancing that actually works','Most decentralized freelance platforms sound good on paper. Grumpus Labs has a real model.','3 Apr',0,'2039981670812549403'],
+   ['p1547826','Quietly building','Everyone\'s chasing pumps while Grumpus Labs keeps building. That\'s how the solid ones move.','9 Apr',1,'2042264699551547826']]},
  {b:'twin3',s:'ai',sub:'Paid partnership',p:[['twin3','The internet is becoming unreadable','Bots, AI accounts and fake profiles everywhere. twin3 is building a way to prove you\'re human.','6 Mar',1,'2029829139453104340']]},
  {b:'Fair.club',s:'ai',sub:'Paid partnership',p:[['fairclub','Early-stage deals, out in the open','Fair.club brings independent curators to private fundraising so you can find the rounds worth your time.','6 Aug',1,'2085393363226759504']]},
  {b:'Prophet',s:'prediction',sub:'Paid partnership',p:[['prophet','A prediction market you don\'t play against people','On Prophet, an AI prices every market and takes the other side.','9 Jul',1,'2075231476736516602']]},
@@ -839,7 +861,27 @@ const C=[
  {b:'OKX Africa',s:'trading',sub:'Paid partnership',p:[['okx','1.4M ZAMA up for grabs','OKX Africa\'s trading competition, where the reward pool grows as total volume climbs.','1 Sep',1,'2094670396758888883']]},
  {b:'Bitget',s:'trading',sub:'Paid partnership',p:[['bitget','Tokenized US stocks, tested','I bought some rAAPL on Bitget. rTokens settle fast and you can use them as margin.','16 Jul',1,'2077772299491508696']]},
  {b:'SnoopBulls',s:'gaming',sub:'Paid partnership',p:[['snoopbulls','A 3D medieval adventure, on-chain','SnoopBulls has a story mode, a leaderboard mode and treasure to craft, live on Google Play.','1 Sep',1,'2094855387837022360']]},
- {b:'StitchHQ',s:'ai',sub:'Paid partnership · X article',p:[['stitch','Financial infra for faster product building','An X article on why banks take longer than NASA did to reach the moon.','4 May',1,'2051289600065204574']]}
+ {b:'StitchHQ',s:'ai',sub:'Paid partnership · X article',p:[['stitch','Financial infra for faster product building','An X article on why banks take longer than NASA did to reach the moon.','4 May',1,'2051289600065204574']]},
+ {b:'SplashOS',s:'trading',sub:'Mobile trading campaign',p:[
+   ['p8201464','A trading terminal built for phones','I finally tried SplashOS. By far the easiest trading terminal I\'ve used on mobile.','15 Jul',1,'2077289981098201464'],
+   ['p2815935','Traders live on their phones','Most trading apps weren\'t built for mobile. SplashOS was.','18 Jul',1,'2078512283412815935'],
+   ['p6322880','Trading away from my desk','Split-screen charts and one-tap trades keep me in control when I\'m out.','20 Jul',1,'2079280617196322880']]},
+ {b:'Perle Labs',s:'ai',sub:'AI data campaign',p:[
+   ['p4157734','AI isn\'t telling you the full story','I noticed AI kept pointing me to the same big names. Perle Labs is fixing the data behind it.','24 Mar',1,'2036416248964157734'],
+   ['p1851501','Lessons from the early internet','In the 90s we believed everything online. Perle Labs wants AI to learn from verified data.','25 Mar',1,'2036791078871851501'],
+   ['p1356762','Why Perle Labs matters','AI is only as good as what it learns from. Perle Labs is building that data layer.','26 Mar',1,'2037190691961356762']]},
+ {b:'Ares',s:'prediction',sub:'Paid partnership',p:[
+   ['p3843022','Social trading, for prediction markets','Ares lets you discover markets and follow other traders\' positions.','19 Aug',1,'2090134172773843022']]},
+ {b:'Probly',s:'prediction',sub:'Paid partnership',p:[
+   ['p9897484','A prediction feed made for you','Probly shows you markets you actually care about instead of a random feed.','14 Aug',1,'2088287962609897484']]},
+ {b:'Markets.xyz',s:'trading',sub:'Paid partnership',p:[
+   ['p7504871','Follow a top trader','Not everyone can be a top trader, but anyone can copy one. Markets app is live on Android and iOS.','11 Jun',1,'2065167560937504871']]},
+ {b:'Xora Finance',s:'trading',sub:'Paid partnership',p:[
+   ['p3407137','Put your idle XRP to work','Xora Finance lets you earn on XRP you\'re already holding.','29 Jun',1,'2071494441043407137']]},
+ {b:'Bori the Badger',s:'presale',sub:'Paid partnership · NFT mint',p:[
+   ['p3260893','Free mint: Bori the Badger','888 supply on Base, free to claim with a +10 X score.','6 Mar',1,'2029786918083260893']]},
+ {b:'burnfat.fun',s:'presale',sub:'Paid partnership',p:[
+   ['p2705038','From 95kg to stay the course','My own weight-loss story, and the burnfat.fun mission that keeps you accountable.','27 Mar',1,'2037615363932705038']]}
 ];
 const SECT={all:'All',trading:'Trading',prediction:'Prediction markets',presale:'Presales & airdrops',privacy:'Privacy',ai:'AI & infra',gaming:'Gaming'};
 let filt='all',shown=9;
@@ -871,14 +913,14 @@ $$('.ph').forEach(b=>b.onclick=()=>{cur=null;openM(`<img src="a/r/${b.dataset.im
 
 /* ---------- ambassador case studies ---------- */
 const A=[
- {b:'Loadout',role:'Official ambassador',when:'Jul – Aug 2026',about:'Loadout is building a marketplace where trading game tokens funds the games directly. They brought me on as an official ambassador.',
+ {x:[['p1985359','Nexus Keeper caught my eye','Out of every game in the Loadout brief, this one breaks away from the usual fire-water-earth formula.','14 Jul',1,'2077028557771985359'],['p9259940','My Loadout game tier list','Loadout revealed 15 games, so I ranked them on what we\'ve seen so far.','23 Jul',0,'2080268705519259940']],b:'Loadout',role:'Official ambassador',when:'Jul – Aug 2026',about:'Loadout is building a marketplace where trading game tokens funds the games directly. They brought me on as an official ambassador.',
   sts:[['148K+','views'],['1.2K','likes'],['613','replies'],['5','posts · 3 paid']],hi:'One post reached 129K views',
   did:['Announced the role with a custom "Big Oma · Loadout Ambassador" card','Spotlighted games from the brief, like Nexus Keeper','Ranked all 15 revealed games in a tier list','Explained the model: trading activity is what funds development','Pushed early access, with my own referral link'],
   bars:[['7.1K','7 Jul',7107],['3.6K','14 Jul',3647],['5.0K','23 Jul',5023],['3.0K','10 Aug',2960],['129K','15 Aug',129464]],
   p:[['loadout','Officially a Loadout ambassador','Announcing the role with a custom ambassador card.','7 Jul',1,'2074420804951949659'],
      ['loadout-access','Early access, explained','How Loadout lets you play games long before everyone else. This one hit 129K views.','15 Aug',1,'2088518592169972185'],
      ['loadout-trade','You\'re not here to fund games. You\'re here to trade.','Why trading activity is what funds development on Loadout.','10 Aug',0,'2086828500661518677']]},
- {b:'Blonex',role:'Presale campaign',when:'Apr – May 2026',about:'Blonex is an AI-powered exchange focused on trading and risk management. I covered their token presale from start to finish.',
+ {x:[['p8414918','Same token, different entry','Early buyers always get the better price, and Blonex phase 2 was still on.','11 May',0,'2053846839678414918'],['p0095716','Real gains come from getting in early','Blonex phase 2 was still live while they built an AI-powered exchange.','13 May',1,'2054535315340095716'],['p7276283','What happens when trades go wrong','Everyone watches price action. Blonex is building for the losing trades too.','20 May',0,'2057040658557276283'],['p8734129','Protecting capital in a downturn','CT celebrates wins, but one bad trade can wipe out months. That\'s the gap Blonex targets.','23 May',0,'2058236749688734129'],['p5756333','Who manages risk when volatility hits?','Everyone talks profits in a bull run. Blonex is built around risk management.','26 May',1,'2059206471875756333']],b:'Blonex',role:'Presale campaign',when:'Apr – May 2026',about:'Blonex is an AI-powered exchange focused on trading and risk management. I covered their token presale from start to finish.',
   sts:[['34K+','views'],['1.7K','likes'],['868','replies'],['10','posts · 4 paid']],hi:'Covered stage 2 through phase 3 ($530K+ raised)',
   did:['Covered every step: stage 2, the price steps, the countdown and phase 3','Framed $BLON as a participation token, not just something to hold','Took the risk-management angle to stand out from hype posts','Shared the presale link and contract so people could act'],
   bars:[['7.3K','28 Apr',7286],['11.3K','4 May',11311],['1.7K','11 May',1654],['1.6K','13 May',1602],['2.1K','18 May',2072],['1.8K','20 May',1755],['2.4K','23 May',2424],['1.7K','26 May',1689],['2.0K','28 May',1996],['2.4K','30 May',2400]],
@@ -888,7 +930,7 @@ const A=[
      ['blonex-entry','Entry changes','Phase 3 live at $0.15 per $BLON.','30 May',0,'2060799520699556176'],
      ['blonex-stage2','Stage 2 now live','Stage 1 closed; stage 2 opened at 0.10 USDT.','28 Apr',0,'2049099052223021545']]}
 ];
-const AOFF=C.length;A.forEach(a=>C.push({b:a.b,s:'_amb',sub:a.role,p:a.p}));
+const AOFF=C.length;A.forEach(a=>C.push({b:a.b,s:'_amb',sub:a.role,p:a.p.concat(a.x||[])}));
 $('#ambGrid').innerHTML=A.map((a,i)=>{const mx=Math.max(...a.bars.map(x=>x[2]));
  return `<article class="amb panel rv" data-a="${i}"><div class="gal"><div class="main" data-c="${AOFF+i}"><div class="bl" style="background-image:url(a/p/${a.p[0][0]}.webp)"></div><img src="a/p/${a.p[0][0]}.webp" alt="${a.p[0][1].replace(/"/g,'')}"><span class="open">Open the campaign →</span></div>
  <div class="thumbs">${a.p.map((p,k)=>`<button class="${k?'':'on'}" data-k="${k}" aria-label="${p[1].replace(/"/g,'')}"><img src="a/p/${p[0]}.webp" alt=""></button>`).join('')}</div></div>
@@ -897,7 +939,7 @@ $('#ambGrid').innerHTML=A.map((a,i)=>{const mx=Math.max(...a.bars.map(x=>x[2]));
  <span class="hi"><svg class="si"><use href="#i-fire"/></svg>${a.hi}</span>
  <h4>What I did</h4><ul>${a.did.map(d=>`<li><svg class="si"><use href="#i-check"/></svg>${d}</li>`).join('')}</ul>
  <h4>Views per post</h4><div class="vbars">${a.bars.map(x=>`<div class="${x[2]===mx?'top':''}"><b>${x[0]}</b><i style="height:${Math.round(8+Math.sqrt(x[2]/mx)*92)}px"></i><span>${x[1]}</span></div>`).join('')}</div>
- <div class="acts"><button class="btn dark" data-c="${AOFF+i}">See all ${a.p.length} highlights <span class="ar">→</span></button></div></div></article>`}).join('');
+ <div class="acts"><button class="btn dark" data-c="${AOFF+i}">See all ${a.p.length+(a.x||[]).length} posts <span class="ar">→</span></button></div></div></article>`}).join('');
 $('#ambGrid').addEventListener('click',e=>{const t=e.target.closest('.thumbs button');if(t){const card=t.closest('.amb'),a=A[card.dataset.a],p=a.p[t.dataset.k];$$('.thumbs button',card).forEach(b=>b.classList.toggle('on',b===t));const m=$('.main',card);$('img',m).src=`a/p/${p[0]}.webp`;$('.bl',m).style.backgroundImage=`url(a/p/${p[0]}.webp)`;m.dataset.k=t.dataset.k;return}
  const c=e.target.closest('[data-c]');if(c){cur=+c.dataset.c;ci=+(c.dataset.k||0);showC()}});
 
