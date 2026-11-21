@@ -508,6 +508,15 @@ footer .by a{text-decoration:underline;text-underline-offset:3px}
 .handles span{background:rgba(255,255,255,.9);color:#1E4FD8;border-color:#fff;box-shadow:0 8px 20px -10px rgba(14,40,110,.5)}
 @media (max-width:900px){.sky2:before{background:radial-gradient(90% 60% at 50% 32%,rgba(22,62,150,.4),rgba(22,62,150,.14) 60%,transparent 85%)}}
 @media (max-width:900px){.sky2{padding:56px 20px 0;text-align:center}.cgrid{grid-template-columns:1fr}.ctxt{padding-bottom:10px}.ctxt .eyebrow{text-align:center}.ctxt .ctext{margin:8px auto 0}.ctxt h2{margin:4px auto 0}.ctxt .acts,.handles{justify-content:center}.cfig img{margin:0 auto;max-width:360px}}
+
+/* mobile scroll performance: no live blurs on phones */
+@media (max-width:820px){
+  .camp .im .bl,.amb .main .bl,.featp .bl,.tpc .im .bl{display:none}
+  .camp .im,.amb .main,.featp,.tpc .im{background:#E9EEF9}
+  .glass,.dc,.mchips div,.tagv,.handles span{backdrop-filter:none;-webkit-backdrop-filter:none}
+  .glass{background:rgba(255,255,255,.88)}.dc,.mchips div{background:rgba(255,255,255,.92)}.tagv{background:rgba(20,40,90,.45)}
+  .rv{transition-duration:.6s}
+}
 </style>
 </head>
 <body>
