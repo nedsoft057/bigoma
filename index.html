@@ -223,11 +223,19 @@ section{padding:110px 0 30px;position:relative}
 .bubble .meta{display:flex;align-items:center;gap:8px;margin-top:18px;flex-wrap:wrap}
 .bubble .proof{display:inline-flex;align-items:center;gap:7px;height:30px;padding:0 12px;border-radius:999px;background:rgba(255,255,255,.2);font-size:12.5px;font-weight:550}
 .bubble .see{display:inline-flex;align-items:center;gap:6px;height:30px;padding:0 12px;border-radius:999px;background:#fff;color:var(--blue2);font-size:12.5px;font-weight:600}
-.av{position:absolute;z-index:6;width:74px;height:74px;border-radius:50%;display:grid;place-items:center;font-size:30px;background:#fff;box-shadow:0 0 0 4px #fff,0 14px 30px -10px rgba(14,23,48,.35);transition:transform .35s cubic-bezier(.2,.8,.2,1);cursor:pointer}
-.av span{width:100%;height:100%;border-radius:50%;display:grid;place-items:center;color:#fff;font-weight:650;font-size:26px;letter-spacing:-.03em}
+.av{position:absolute;z-index:6;width:74px;height:74px;border-radius:50%;display:grid;place-items:center;font-size:24px;padding:0;background:#fff;box-shadow:0 0 0 4px #fff,0 14px 30px -10px rgba(14,23,48,.35);transition:transform .35s cubic-bezier(.2,.8,.2,1);cursor:pointer}
+.av span{width:100%;height:100%;border-radius:50%;display:grid;place-items:center;color:#fff;font-weight:650;letter-spacing:-.03em}
 .av.on{transform:scale(1.14);box-shadow:0 0 0 4px #fff,0 0 0 8px rgba(46,91,215,.35),0 18px 34px -10px rgba(14,23,48,.45)}
 .av em{position:absolute;bottom:-26px;left:50%;transform:translateX(-50%);font-style:normal;font-size:12px;font-weight:550;color:var(--ink2);white-space:nowrap}
-.stick{position:absolute;z-index:7;font-size:44px;filter:drop-shadow(0 10px 12px rgba(20,40,100,.25));pointer-events:none}
+.av img{width:100%;height:100%;border-radius:50%;object-fit:cover}
+.av span{font-size:calc(.36em + 10px)}
+.say .bubble{transform:rotate(-2.2deg)}
+.say .bubble.out{transform:rotate(-2.2deg) translateY(8px) scale(.98)}
+.s3 span{position:absolute;z-index:8;font-size:48px;line-height:1;filter:drop-shadow(0 10px 12px rgba(20,40,100,.28));pointer-events:none;opacity:0;transform:scale(.3) rotate(-20deg)}
+.s3 .s1{left:-30px;top:-34px;--r:-14deg}.s3 .s2{right:-22px;top:-40px;--r:12deg;font-size:56px}.s3 .s3b{right:-6px;bottom:-34px;--r:-8deg}
+.s3.pop span{animation:spop .6s cubic-bezier(.2,1.6,.4,1) forwards}
+.s3.pop .s2{animation-delay:.08s}.s3.pop .s3b{animation-delay:.16s}
+@keyframes spop{to{opacity:1;transform:scale(1) rotate(var(--r))}}
 .pdots{display:flex;justify-content:center;gap:8px;margin-top:6px}
 .pdots button{width:8px;height:8px;border-radius:50%;background:#C9D5EA;transition:all .25s}
 .pdots button.on{width:26px;border-radius:99px;background:var(--blue)}
@@ -292,8 +300,7 @@ footer .by a{text-decoration:underline;text-underline-offset:3px}
   .tagR{background:none;box-shadow:none;backdrop-filter:none;-webkit-backdrop-filter:none;padding:0}
   .tagR .k{justify-content:center}
   .pil{padding-bottom:96px;min-height:0}.pil .tx{max-width:100%}.pil .art{width:96px;height:96px;right:-10px;bottom:-14px}
-  .stick{display:none}
-  .bubble .em{display:block}
+  .s3 span{font-size:36px}.s3 .s2{font-size:42px;right:-4px}.s3 .s1{left:-8px}
   .tagL{left:0;right:0;top:11.2%;justify-content:center;font-size:10.5px;letter-spacing:.28em}
   .tagL:after{display:none}
   .tagR{left:20px;right:20px;top:auto;bottom:5.5%;width:auto;text-align:center;z-index:15}
@@ -321,15 +328,12 @@ footer .by a{text-decoration:underline;text-underline-offset:3px}
   .why{padding:24px}
   .why h3{font-size:32px}
   .bx,.bx.l{grid-column:span 12}
-  .radar{height:auto;padding:150px 0 140px}
+  .radar{height:auto;padding:150px 0 170px}
   .ring.r1{width:330px;height:330px}.ring.r2{width:520px;height:520px}.ring.r3{display:none}
   .say{position:relative;left:auto;top:auto;transform:none;width:100%}
   .bubble{padding:24px}
   .bubble q{font-size:23px}
-  .av{width:58px;height:58px;font-size:24px}
-  .av span{font-size:20px}
   .av em{display:none}
-  .stick{font-size:34px}
   .closer{padding:84px 8px 8px}
   .sky2{padding:70px 12px 0;border-radius:28px}
   .sky2 .bank{height:140px}
@@ -674,27 +678,29 @@ $$('.fv video,.bx video,#feat video').forEach(v=>{vio.observe(v);v.addEventListe
 
 /* ---------- proof radar ---------- */
 const T=[
-{n:'Sam',c:'#5B7CF0',i:'S',q:'Absolutely nice. I believe individually you had the most invites. Well done.',pr:'🎟️ 73 invite codes claimed',img:'sam',st:'🎟️'},
-{n:'Javex team',c:'#111827',i:'J',q:'The team is genuinely happy with your efforts so far, Oma. Keep up the good work! We appreciate what you\'re doing for Javex.',pr:'🙏 Javex campaign',img:'javex',st:'🙏'},
-{n:'Campaign lead',c:'#E86A9E',i:'💙',q:'OMA! 9 people now. 1 with trade, 1 with swap, 1 bridged. gj',pr:'🔁 9 sign-ups, 3 on-chain',img:'nine',st:'🔁'},
-{n:'Project team',c:'#F29A38',i:'✨',q:'Looks good tho!! Repost\'ed and replied! Thanks Oma! Btw feedback from team: they love your work and engagement.',pr:'💕 Team feedback',img:'team',st:'💕'},
-{n:'Client',c:'#2FAE7A',i:'$',q:'Job well done. 👏',pr:'💸 200 USDT paid on delivery',img:'usdt',st:'💸'},
-{n:'Ed-0d',c:'#7B5CF0',i:'E',q:'Good jobs 👏',pr:'✅ Sent and done',img:'ed0d',st:'👏'}
+{n:'Sam',dp:'dp-sam',c:'#5B7CF0',i:'S',q:'Absolutely nice. I believe individually you had the most invites. Well done.',pr:'🎟️ 73 invite codes claimed',img:'sam',st:['🎟️','🎉','🏆']},
+{n:'Javex',dp:'dp-javex',c:'#162a4a',i:'J',q:'The team is genuinely happy with your efforts so far, Oma. Keep up the good work! We appreciate what you\'re doing for Javex.',pr:'🙏 Javex campaign',img:'javex',st:['🙏','💙','✨']},
+{n:'Campaign lead',c:'#E86A9E',i:'💙',q:'OMA! 9 people now. 1 with trade, 1 with swap, 1 bridged. gj',pr:'🔁 9 sign-ups, 3 on-chain',img:'nine',st:['🔁','📈','🎉']},
+{n:'Project team',c:'#F29A38',i:'✨',q:'Looks good tho!! Repost\'ed and replied! Thanks Oma! Btw feedback from team: they love your work and engagement.',pr:'💕 Team feedback',img:'team',st:['💕','🔥','✨']},
+{n:'Client',c:'#2FAE7A',i:'💸',q:'Job well done. 👏',pr:'💸 200 USDT paid on delivery',img:'usdt',st:['💸','👏','🎉']},
+{n:'Ed-0d',dp:'dp-ed0d',c:'#111',i:'E',q:'Good jobs 👏',pr:'✅ Sent and done',img:'ed0d',st:['👏','✅','💙']}
 ];
-const POS=[[8,18],[86,14],[2,62],[92,60],[24,90],[74,92]];
-const POSM=[[6,4],[78,2],[86,88],[2,86],[40,-2],[44,96]];
-const STK=[[30,10],[66,20],[18,44],[80,40],[34,84],[64,80]];
+// [left%, top%, size]
+const POS=[[11,42,88],[87,20,76],[21,84,60],[79,86,58],[31,9,54],[92,60,70]];
+const POSM=[[13,8,64],[86,9,58],[16,86,52],[84,85,52],[50,3,46],[50,90,56]];
 const radar=$('#radar');
-T.forEach((t,i)=>{const a=document.createElement('button');a.className='av bob d'+(i%4);a.dataset.i=i;a.style.cssText=`--rt:0deg`;a.innerHTML=`<span style="background:linear-gradient(160deg,${t.c},${t.c}cc)">${t.i}</span><em>${t.n}</em>`;a.setAttribute('aria-label','Show message from '+t.n);radar.appendChild(a)});
-const sk=document.createElement('div');sk.className='stick bob';radar.appendChild(sk);
-function placeAv(){const m=innerWidth<=720;$$('.av',radar).forEach((a,i)=>{const p=(m?POSM:POS)[i];a.style.left=p[0]+'%';a.style.top=p[1]+'%';a.style.marginLeft='-'+(m?29:37)+'px';a.style.marginTop='-'+(m?29:37)+'px';if(!m){a.style.left=`calc(${p[0]}% + 37px)`}})}
+T.forEach((t,i)=>{const a=document.createElement('button');a.className='av bob d'+(i%4);a.dataset.i=i;
+  a.innerHTML=(t.dp?`<img src="a/r/${t.dp}.webp" alt="">`:`<span style="background:linear-gradient(160deg,${t.c},${t.c}bb)">${t.i}</span>`)+`<em>${t.n}</em>`;
+  a.setAttribute('aria-label','Show message from '+t.n);radar.appendChild(a)});
+const say=$('.say',radar);const S3=document.createElement('div');S3.className='s3';S3.innerHTML='<span class="s1"></span><span class="s2"></span><span class="s3b"></span>';say.appendChild(S3);
+function placeAv(){const m=innerWidth<=720;$$('.av',radar).forEach((a,i)=>{const p=(m?POSM:POS)[i];a.style.left=p[0]+'%';a.style.top=p[1]+'%';a.style.width=a.style.height=p[2]+'px';a.style.margin=`-${p[2]/2}px 0 0 -${p[2]/2}px`})}
 placeAv();addEventListener('resize',placeAv);
 let ti=0,tt;
 $('#pdots').innerHTML=T.map((_,i)=>`<button aria-label="Message ${i+1}"></button>`).join('');
-function showT(i){ti=i;const t=T[i],b=$('#bubble');b.classList.add('out');
-  setTimeout(()=>{b.innerHTML=`<span class="em">${t.st}</span><div class="who"><b>${t.n}</b> · via Telegram</div><q>${t.q}</q><div class="meta"><span class="proof">${t.pr}</span><button class="see" data-img="${t.img}">See the real DM →</button></div>`;b.classList.remove('out')},260);
+function showT(i){ti=i;const t=T[i],b=$('#bubble');b.classList.add('out');S3.classList.remove('pop');
+  setTimeout(()=>{b.innerHTML=`<div class="who"><b>${t.n}</b> · via Telegram</div><q>${t.q}</q><div class="meta"><span class="proof">${t.pr}</span><button class="see" data-img="${t.img}">See the real DM →</button></div>`;b.classList.remove('out');
+    $$('span',S3).forEach((x,k)=>x.textContent=t.st[k]);void S3.offsetWidth;S3.classList.add('pop')},260);
   $$('.av',radar).forEach((a,k)=>a.classList.toggle('on',k===i));$$('#pdots button').forEach((d,k)=>d.classList.toggle('on',k===i));
-  const s=STK[i];sk.textContent=t.st;sk.style.left=s[0]+'%';sk.style.top=s[1]+'%';
   clearTimeout(tt);tt=setTimeout(()=>showT((ti+1)%T.length),6000)}
 showT(0);
 radar.addEventListener('click',e=>{const a=e.target.closest('.av');if(a)showT(+a.dataset.i);const s=e.target.closest('.see');if(s)openM(`<img src="a/r/${s.dataset.img}.webp" alt="Client DM screenshot">`)});
