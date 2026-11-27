@@ -595,6 +595,12 @@ async function probeDuration(f){
   const m=line.match(/Duration: (\d+):(\d+):([\d.]+)/);return m?(+m[1])*3600+(+m[2])*60+(+m[3]):0;
 }
 
+async function probeOut(path){
+  logs=[];try{await call('exec',{args:['-hide_banner','-i',path]})}catch(e){}
+  const line=logs.find(l=>/Duration: \d/.test(l));if(!line)return 0;
+  const m=line.match(/Duration: (\d+):(\d+):([\d.]+)/);return m?(+m[1])*3600+(+m[2])*60+(+m[3]):0;
+}
+
 /* ---------- file in ---------- */
 const drop=$('#drop');
 ['dragenter','dragover'].forEach(ev=>drop.addEventListener(ev,e=>{e.preventDefault();drop.classList.add('over')}));
@@ -648,10 +654,19 @@ $('#go').onclick=async()=>{
       setProg(`Cutting part ${p.i+1} of ${n}`,`${fmt(p.start)} to ${fmt(p.start+p.len)}`,p.i/n);
       onProg=d=>{const r=Math.max(0,Math.min(1,d.progress||0));setProg(`Cutting part ${p.i+1} of ${n}`,null,(p.i+r)/n);if(segEls[p.i])segEls[p.i].querySelector('.fill').style.transform=`scaleX(${r})`};
       if(segEls[p.i])segEls[p.i].querySelector('.fill').style.transform='scaleX(.15)';
-      const args=['-hide_banner','-ss',p.start.toFixed(3),'-i',inp,'-t',p.len.toFixed(3),'-map','0:v?','-map','0:a?','-c','copy','-avoid_negative_ts','make_zero'];
-      if(ext==='mp4'||ext==='mov'||ext==='m4v')args.push('-movflags','+faststart');
-      args.push(out);
-      logs=[];const rc=await call('exec',{args});
+      // cuts without re-encoding start on a keyframe, so a part can come out a touch long.
+      // measure it and trim again until it fits inside the chosen length.
+      let t=p.len,rc=0;
+      for(let attempt=0;attempt<4;attempt++){
+        const args=['-hide_banner','-ss',p.start.toFixed(3),'-i',inp,'-t',t.toFixed(3),'-map','0:v?','-map','0:a?','-c','copy','-avoid_negative_ts','make_zero'];
+        if(ext==='mp4'||ext==='mov'||ext==='m4v')args.push('-movflags','+faststart');
+        args.push('-y',out);
+        logs=[];rc=await call('exec',{args});
+        if(rc!==0)break;
+        const actual=await probeOut(out);
+        if(!actual||actual<=p.len+0.01)break;
+        t=Math.max(0.5,t-(actual-p.len)-0.03);
+      }
       let data=null;try{data=await call('read',{path:out})}catch(e){}
       await call('rm',{path:out});
       if(!data||!data.length){throw new Error(rc!==0?('ffmpeg: '+(logs.slice(-3).join(' ')||'failed')):'empty part')}
